@@ -42,7 +42,7 @@ export default function Home() {
     }}>
       <div className="hero-container">
         <div className="hero">
-          <p className="herotext">BookBite</p>
+          <p className="herotext">BookHouse</p>
           <p className="herotext2">Read. Review. Repeat.</p>
           <button className="get-started" onClick={() => { window.location.href = "/#/store"; }}>Get started
             <span className="material-symbols-outlined"

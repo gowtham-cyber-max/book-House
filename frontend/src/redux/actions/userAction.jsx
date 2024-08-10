@@ -19,7 +19,7 @@ export const signIn = (user, password) => async (dispatch, getState) => {
         const res = await serv.signIn(user, password);
         if (res.data !== "success") {
             dispatch({ type: "SET_USER", payload: res.data })
-            if (res.data.user == "ranga") {
+            if (res.data.user == "ranga") { // change to your user name
                 console.log("admin logged in");
                 dispatch({ type: "SET_USER_TYPE", payload: "admin" })
             } else {
