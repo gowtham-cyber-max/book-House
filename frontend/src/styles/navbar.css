@@ -1,0 +1,36 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0px 25px;
+    height: 10vh;
+    width: calc(100% - 50px);
+    position: absolute;
+    z-index: 3;
+}
+
+.navigation h2 {
+    cursor: pointer;
+}
+
+.navigation h2 span {
+    position: relative;
+    top: 3px;
+    margin: 0px 5px;
+}
+
+.navigation--no-z {
+    position: relative;
+    z-index: 0;
+    margin-bottom: 1rem;
+}
+
+.logged-in {
+    display: flex;
+    align-items: center;
+}
+
+.navigation .user-name {
+    text-transform: capitalize;
+    font-weight: 550;
+}

@@ -1,0 +1,64 @@
+.add-book {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+    overflow: scroll;
+    height: calc(100% - 100px);
+}
+
+.add-book h1 {
+    grid-column: 1 / span 2;
+}
+
+.add-book input,
+.add-book textarea {
+    width: 80%;
+    padding: 0.5rem;
+}
+.add-book select {
+    width: 85%;
+    padding: 0.5rem;
+}
+
+.add-book button[type="submit"] {
+    grid-column: 1 / span 2;
+    margin: 1rem;
+}
+
+.genres {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.genre {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    background: #f0f0f0;
+    width: fit-content;
+    white-space: nowrap;
+}
+
+.backspace {
+    position: absolute;
+    right: 0;
+    z-index: 3;
+    padding: 0rem 0.5rem;
+    background-color: #e1e1e1;
+    height: 100%;
+    align-content: center;
+}
