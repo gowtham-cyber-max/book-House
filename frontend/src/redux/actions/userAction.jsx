@@ -4,13 +4,14 @@ const serv = userServices;
 export const signUp = (data) => async (dispatch, getState) => {
     try {
         const res = await serv.signUp(data);
-        if (res.status !== 201) {
-            console.log("Error adding user");
+        if (res.data !== null) {
+            dispatch({ type: "SET_ERROR", payload: "User already exists" })
         } else {
             dispatch({ type: "SET_USER", payload: res.data })
+            dispatch({ type: "SET_ERROR", payload: null })
         }
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 

@@ -10,13 +10,14 @@ import java.util.UUID;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class PublicReview_DTO {
     private String id;
+    private String userid;
+    private String bookid;
     private String name;
-    private Integer stars;
+    private String bookname;
+    private Double stars;
     private String comment;
-    public PublicReview_DTO() {
-        this.id = UUID.randomUUID().toString(); // Generate a unique ID
-    }
 
 }

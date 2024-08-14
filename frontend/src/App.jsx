@@ -14,7 +14,6 @@ import Navbar from "./components/Navbar";
 import Profile from "./pages/Profile";
 
 
-
 function App() {
   return (
     <Provider store={store}>
@@ -31,7 +30,6 @@ function App() {
           <Route path="/store" element={<BookList />} />
           <Route path="/book/:id" element={<BookDetails />} />
           <Route path="*" element={<Navigate to="/home" replace />} />
-        
         </Routes>
       </HashRouter>
     </Provider>

@@ -1,4 +1,4 @@
-# Use a more recent Node.js version
+# Use an official node runtime as a parent image
 FROM node:latest
 
 # Set the working directory in the container
@@ -13,11 +13,8 @@ RUN npm install
 # Copy the rest of the application code to the container
 COPY . .
 
-# Build the Vite app
-RUN npm run build
+# Expose the port your app runs on
+EXPOSE 3000
 
-# Expose the port Vite uses
-EXPOSE 5173
-
-# Serve the built application
-CMD ["npm", "run","dev"]
+# Start the application
+CMD ["npm", "run", "dev"]

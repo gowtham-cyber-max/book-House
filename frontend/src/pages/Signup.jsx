@@ -14,18 +14,20 @@ function Signup() {
   const onSubmit = (e) => {
     e.preventDefault();
     dispatch(signUp(data));
+    console.log(data)
     setData({
       user: "",
       email: "",
       password: ""
     })
+    window.location.href = "#/sign-in";
   };
   return (
     <div className="auth-container">
       <form onSubmit={onSubmit}>
         <fieldset>
-          <legend align="left">Sign Up</legend>
           <div className="input-grid">
+          <h2 align="left">Sign Up</h2>
             <input
               type="text"
               placeholder="Username"
@@ -47,7 +49,7 @@ function Signup() {
                 setData({ ...data, password: e.target.value });
               }}
             />
-            <button type="submit">Sign Up</button>
+            <button className="signin-button" type="submit">Sign Up</button>
             <a href="#/sign-in">Already have an account? Sign In</a>
           </div>
         </fieldset>

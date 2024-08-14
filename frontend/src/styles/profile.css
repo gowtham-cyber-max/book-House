@@ -4,3 +4,15 @@
     text-align: left;
     padding: 24px;
 }
+.profile-reviews{
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.reviews-section{
+    width:700px;
+    align-self: flex-end;
+}

@@ -3,6 +3,7 @@ import LazyLoad from 'react-lazy-load'
 import { API_URL } from '../redux/store';
 import { useDispatch } from 'react-redux';
 import { getNextBooks } from '../redux/actions/bookListAction';
+import Rating from 'react-rating';
 
 const LazyCard = ({ book }) => {
     return (
@@ -12,6 +13,11 @@ const LazyCard = ({ book }) => {
                 <p className="book-item-name" aria-description={book.name}>{book.name}</p>
                 <p className="book-item-author">{book.author}</p>
                 <p>₹{book.price}</p>
+                <Rating readonly initialRating={book.avg} emptySymbol={<span className="material-symbols-outlined">
+                star
+            </span>} fullSymbol={<span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24" }}>
+                star
+            </span>} />
             </div>
         </div>
     )

@@ -13,19 +13,21 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.UUID;
 
 @Entity
-@Document("PublicReview")
+@Document("Reviews")
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class PublicReview {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
+
+    private String userid;
+    private String bookid;
     private String name;
-    private Integer stars;
+    private String bookname;
+    private Double stars;
     private String comment;
-    public PublicReview() {
-        this.id = UUID.randomUUID().toString(); // Generate a unique ID
-    }
 
 }

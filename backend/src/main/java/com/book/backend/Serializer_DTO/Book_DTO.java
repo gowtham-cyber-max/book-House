@@ -24,10 +24,12 @@ public class Book_DTO {
     private Double  discount;
     private String binding ;
     private String publisher ;
-    private String edition ;
     private String isbn;
     private Integer sold;
-    private List<PublicReview> ratings;
+    private String buy;
+    private String read;
+    private Double avg;
+    private List<String> reviewIds;
     private List<String> imageIds;
     private String language;
 }

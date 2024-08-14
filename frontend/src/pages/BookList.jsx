@@ -27,7 +27,7 @@ export default function BookList() {
       Default: "id",
       "Price (Low to High)": "price",
       "Price (High to Low)": "price",
-      Rating: "rating",
+      Rating: "avg",
       "Title (Ascending)": "name",
       "Title (Descending)": "name",
     };

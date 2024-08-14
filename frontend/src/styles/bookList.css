@@ -7,11 +7,11 @@
 }
 .book-list {
     display: grid;
-    overflow: hidden;
-    max-width: 950px;
+    /* overflow: hidden; */
+    max-width: 1200px;
     width: 100%;
     grid-template-columns: repeat(auto-fill, 250px);
-    grid-gap: 2rem;
+    grid-gap: 2.2rem;
     place-items: center;
     justify-content: center;
     align-content: center;
@@ -29,19 +29,19 @@
 
 .book-list-item {
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
     padding: 1rem;
     width: calc(250px - 2rem);
-    height: calc(340px - 2rem);
+    height: calc(360px - 2rem);
     transition: all 0.3s;
     cursor: pointer;
-    background-color: #f0f0f5;
+    background-color:rgb(217, 201, 178);
     overflow: hidden;
 }
 
 .book-list-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 5px 15px black;
 }
 
 .book-item-desc {
@@ -181,4 +181,7 @@
 }
 .selected-genre:hover {
     background-color: #333;
+}
+.filters-genres::-webkit-scrollbar{
+    display: none;
 }

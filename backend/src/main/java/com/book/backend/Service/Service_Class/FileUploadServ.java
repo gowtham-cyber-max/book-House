@@ -4,6 +4,7 @@ import com.book.backend.Mapper.FileUploadMapper;
 import com.book.backend.Models.FileUpload;
 import com.book.backend.Repo.FileUploadRepo;
 import com.book.backend.Serializer_DTO.FileUpload_DTO;
+import com.book.backend.Service.Service_Interface.FileUpload_Interface;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import com.mongodb.client.gridfs.model.GridFSFile;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class FileUploadServ {
+public class FileUploadServ implements FileUpload_Interface {
     @Autowired
     private GridFsTemplate template;
 

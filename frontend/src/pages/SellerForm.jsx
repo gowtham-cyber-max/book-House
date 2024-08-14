@@ -117,6 +117,8 @@ export default function SellerForm() {
         type="checkbox"
         value={data.used}
         onChange={(e) => setData({ ...data, used: e.target.checked })}
+        className="check-box"
+        
       />
       <label>Genres</label>
       <div
@@ -140,6 +142,7 @@ export default function SellerForm() {
               flexWrap: "nowrap",
               gap: "1rem"
             }}
+            className="inner-genre"
           >
             {data.genre.map((genre) => (
               <span className="genre" key={genre}>{genre}</span>

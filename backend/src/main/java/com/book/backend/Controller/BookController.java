@@ -103,11 +103,6 @@ public class BookController {
         return new ResponseEntity<>(s.buyBooks(ids),HttpStatus.OK);
     }
 
-    // review
-    @PostMapping("/review/add")
-    ResponseEntity<Book_DTO>addOneReview(@RequestParam String bid,@RequestBody PublicReview_DTO review_dto){
-        return new ResponseEntity<>(s.addOneReview(bid,review_dto),HttpStatus.OK);
-    }
 
 
 }

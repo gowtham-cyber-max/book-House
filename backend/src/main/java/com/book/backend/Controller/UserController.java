@@ -52,4 +52,9 @@ public class UserController {
     public ResponseEntity<User_DTO> addRequest(@RequestParam String uid,@RequestParam String newid){
         return new ResponseEntity<>(s.addRequest(uid,newid),HttpStatus.OK);
     }
+    @PostMapping("/friend-request-accept")
+    public ResponseEntity<User_DTO> acceptRequest(@RequestParam String uid,@RequestParam String acceptId){
+        return new ResponseEntity<>(s.acceptRequest(uid,acceptId),HttpStatus.OK);
+    }
+
 }

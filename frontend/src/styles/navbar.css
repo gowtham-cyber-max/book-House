@@ -7,6 +7,9 @@
     width: calc(100% - 50px);
     position: absolute;
     z-index: 3;
+    background-color: rgb(96, 57, 47);
+    color: whitesmoke;
+    position: fixed;
 }
 
 .navigation h2 {
@@ -33,4 +36,8 @@
 .navigation .user-name {
     text-transform: capitalize;
     font-weight: 550;
+}
+.search-submit{
+    color: white;
+    background-color: transparent;
 }

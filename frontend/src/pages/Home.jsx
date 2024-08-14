@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/home.css";
 import Navbar from "../components/Navbar";
-
+import bookimg from '../assets/Magical Library coloring page inspiration.jpeg'
 export default function Home() {
   const [B1, setB1] = useState(0);
   const [B2, setB2] = useState(0);
@@ -56,7 +56,8 @@ export default function Home() {
           </button>
         </div>
         <div className="books">
-          <div className="book" style={{
+        <img src={bookimg} className="book-img"/>
+          {/* <div className="book" style={{
             transform: `rotate(${B1}deg)`,
           }}>
             <p>
@@ -78,7 +79,7 @@ export default function Home() {
             <p>
               Romance
             </p>
-          </div>
+          </div> */}
         </div>
 
       </div>

@@ -46,7 +46,7 @@ export default function Navbar() {
                     window.location.href = "/#/home";
                 }
             }>
-                BookBite
+                BookHouse
                 {loc.pathname === "/seller-home" ? (
                     <span
                         className="material-symbols-outlined"

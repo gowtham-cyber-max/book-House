@@ -96,9 +96,10 @@
 
         
 
-# Tips
+# Tips:
+        if sub class is create automatical check the } in that class
 
-### List of convertion By
+#  ## List of convertion By
 
     public List<User_DTO> getAllUser(){
         List<User> allUsers=r.findAll();

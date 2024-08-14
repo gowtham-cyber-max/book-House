@@ -3,9 +3,11 @@ package com.book.backend.Service.Service_Class;
 import com.book.backend.Mapper.BookMapper;
 import com.book.backend.Mapper.PublicReviewMapper;
 import com.book.backend.Models.Book;
+import com.book.backend.Models.PublicReview;
 import com.book.backend.Repo.BookRepo;
 import com.book.backend.Serializer_DTO.Book_DTO;
 import com.book.backend.Serializer_DTO.PublicReview_DTO;
+import com.book.backend.Service.Service_Interface.BookInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -18,7 +20,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class BookServ {
+public class BookServ implements BookInterface{
     @Autowired
     private BookRepo r;
     // # Crud Operation
@@ -29,7 +31,14 @@ public class BookServ {
         if(b.getImageIds()==null){
             b.setImageIds(List.of()); // it will intialize the image
         }
+        if(b.getReviewIds()==null){
+            b.setReviewIds(List.of());
+        }
         r.save(b);
+        return BookMapper.convertToBook_DTO(b);
+    }
+    public Book_DTO get(String id){
+        Book b=r.findByIdCustom(id);
         return BookMapper.convertToBook_DTO(b);
     }
 
@@ -90,7 +99,7 @@ public class BookServ {
     }
 
     // sorting and filtering get
-    public List<Book_DTO> customGet(Integer page, String sort, Boolean order, String genre) {
+    public List<Book_DTO>   customGet(Integer page, String sort, Boolean order, String genre) {
         List<Book> bookList;
         if (genre.equals("All") && order)
             bookList = r.findAll(PageRequest.of(page, 9, Sort.by(sort).ascending())).toList();
@@ -131,12 +140,6 @@ public class BookServ {
         return r.findAllById(IDs).stream().map(BookMapper::convertToBook_DTO).collect(Collectors.toList());
     }
 
-    public Book_DTO get(String bId) {
-        Book b = r.findById(bId).orElse(null);
-        if(b==null)
-            return null;
-        return BookMapper.convertToBook_DTO(b);
-    }
     public String buyBooks(List<String>ids){
         for(String i:ids){
             Book b=r.findByIdCustom(i);
@@ -146,16 +149,27 @@ public class BookServ {
         }
         return "Sucess";
     }
+    public void addOneReview(String reviewId, String bookId,Double newstar){
+        Book b=r.findByIdCustom(bookId);
+        if(b==null){
+            return;
+        }
+        if(b.getReviewIds()==null){
+           b.setReviewIds(new ArrayList<>());
+        }
+        b.getReviewIds().add(reviewId);
+        if(b.getAvg()==null || b.getAvg()==0){
+            b.setAvg(newstar);
+        }
+        else{
+            Double Totalstars=(b.getAvg()*(b.getReviewIds().size()-1))+(newstar);
 
-    public Book_DTO addOneReview(String bid, PublicReview_DTO reviewDto) {
-        Book b=r.findByIdCustom(bid);
-        if(b.getRatings()==null)
-            b.setRatings(new ArrayList<>());
-        b.getRatings().add(PublicReviewMapper.convertToPublicReview(reviewDto));
+        System.out.println(b.getAvg());
+            b.setAvg(Totalstars/b.getReviewIds().size());
 
+        }
         r.save(b);
-        return BookMapper.convertToBook_DTO(b);
-
-
     }
+
+
 }

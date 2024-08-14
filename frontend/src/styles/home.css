@@ -1,6 +1,6 @@
 .hero-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: calc(100vh - 2rem);
     width: calc(100% - 2rem);
@@ -28,12 +28,14 @@
 }
 
 .herotext {
-    font-size: 8rem;
+    font-size:8rem;
     height: 12rem;
+    color: rgb(21, 23, 33);
 }
 
 .herotext2 {
     font-size: 2rem;
+    color: rgb(21, 23, 33);
 }
 
 .get-started {
@@ -45,17 +47,27 @@
     cursor: pointer;
     align-content: center;
 }
+.get-started:hover {
+    padding: 8px 16px;
+    border-radius: 10px;
+    background-color: #242424;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    align-content: center;
+}
 
 .books {
-    height: calc(80% - 16px);
-    width: 100%;
+    width: 700px;
+    height: calc(100vh - 110px);
     display: flex;
-    justify-content: space-evenly;
-    align-items: end;
-    position: relative;
-    padding-right: 5rem;
-    border-bottom: 16px solid #842106;
-    border-radius: 5px 5px 10px 10px;
+    align-items: flex-end;
+}
+
+.book-img{
+    height: 560px;
+    width: 700px;
+    border-radius: 10px;
 }
 
 .book {

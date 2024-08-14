@@ -8,7 +8,7 @@ export default function SellerHome() {
       }}
     >
       <div className="seller-hero">
-        <p className="herotext">BookBite</p>
+        <p className="herotext">BookHouse</p>
         <p className="herotext2">Sell. Earn. Satisfy. </p>
 
         <button
